@@ -6,13 +6,13 @@ const result = document.getElementById('result');
 
 const worker2 = new SharedWorker("./test2.js");
 
-inputValue.onchange = function ()
+inputValue.onchange = () =>
 {
     worker2.port.postMessage([inputValue.value, inputValue.value]);
     console.log('send msg to worker2');
 }
 
-worker2.port.onmessage = function (e)
+worker2.port.onmessage = () =>
 {
     result.textContent = e.data;
     worker.port.postMessage(e.data)
