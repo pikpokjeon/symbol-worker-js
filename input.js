@@ -1,21 +1,28 @@
-import { worker } from './index'
-
-const inputValue = document.getElementById('input-field');
-
-const result = document.getElementById('result');
+import {worker} from './index.js'
 
 const worker2 = new SharedWorker("./test2.js");
+const id = n =>  document.getElementById(n)
 
-inputValue.onchange = () =>
+
+id('submit').onclick = () =>
 {
-    worker2.port.postMessage([inputValue.value, inputValue.value]);
-    console.log('send msg to worker2');
+    const inputValue = id('input-field').value
+    // worker2에 메세지 전달
+    worker2.port.postMessage([inputValue]);
+
+    // test2.js에서 가공된 데이터 받음
+    worker2.port.onmessage = (res) =>
+    {
+        result.textContent = res.data;
+        // worker1에게 메세지 전달 test.js로.
+        worker.port.postMessage(res.data)
+        console.log('received from worker2 and post to worker1');
+    }
+
 }
 
-worker2.port.onmessage = () =>
-{
-    result.textContent = e.data;
-    worker.port.postMessage(e.data)
-    console.log('received from worker2 and post to worker1');
-}
-// worker2.port.close()
+
+id('close1').onclick = (e) => worker.port.close()
+id('close2').onclick = (e) => worker2.port.close()
+
+export {worker2}

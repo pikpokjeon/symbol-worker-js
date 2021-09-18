@@ -1,0 +1,56 @@
+main {
+    width: 100%;
+    padding-top: 5vh;
+}
+
+section {
+    width: 800px;
+    margin: auto;
+    box-shadow: 0px 3px 37px #e0e0e0a8;
+    border-radius: 2em;
+    padding: 3em 4em;
+}
+
+article {
+    padding: 0 10px 10px 20px;
+    border: 1px solid gainsboro;
+    margin: 10px 0;
+}
+
+.input-wrapper {
+    background: cornflowerblue;
+    display: block;
+    padding: 10px;
+    border-radius: 1em;
+}
+
+#input-field {
+    width: 709px;
+    padding: 7px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 0;
+}
+
+.submit {
+    background: 0;
+    border: 0;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+#log {
+    white-space: pre-wrap;
+    width: 100%;
+    overflow-wrap: break-word;
+    padding-bottom: 50px;
+}
+
+.close {
+    border: 0;
+    background: #ff7272;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 12px;
+}

@@ -6,22 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <main>
-        <article>
-            <h1>Shared workers test1</h1>
-            <pre id="log">Log:</pre>
+        <section>
+            <h1>Shared Worker Test</h1>
+            <h4>Send message to Worker 2</h4>
+            <div class="input-wrapper">
 
-        </article>
-        <article>
-            <h1>Shared workers test2</h1>
-            <input type="text" id="input-field">
-            <button id="submit">'</button>
-            <pre id="result">result:</pre>
+                <input type="text" id="input-field">
+                <button id="submit" class="submit">Send</button>
+            </div>
+            <article>
+                <h1>Worker 2</h1>
+                <button id="close2" class="close">Close Port</button>
 
-        </article>
+                <div>Received</div>
+                <pre id="result"></pre>
+            </article>
+            <article>
+                <h1>Worker 1</h1>
+                <button id="close1" class="close">Close Port</button>
+                <div>Message Logs(received from Worker 2)</div>
+                <div id="log"></div>
+
+            </article>
+
+        </section>
     </main>
     <script src="./index.js"></script>
     <script src="./input.js"></script>

@@ -1,17 +1,18 @@
+import {worker2} from "./input.js";
+
 const worker = new SharedWorker('./test.js',);
-const inputValue = document.getElementById('input-field');
-
 const log = document.getElementById('log');
-worker.port.addEventListener('message', e =>
+
+
+worker.port.onmessage = (res) =>
 {
-    log.textContent += e.data;
-
-    console.log('메세지 받음', e.data)
-}, true);
-
+    log.innerHTML += res.data;
+    console.log('워커1이 받은 메세지 ', res.data)
+    
+}
 
 worker.port.start();
-worker.port.postMessage('start-worker1');
-// worker.port.close()
+
+
 
 export { worker }
