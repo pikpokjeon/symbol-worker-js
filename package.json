@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "worker 와 symbol 공부 내용 테스트",
   "dependencies": {
-    "parcel": "^2.0.0-beta.2"
+    "parcel": "^2.8.2"
   },
   "devDependencies": {},
   "main": "index.js",
